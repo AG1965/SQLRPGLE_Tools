@@ -17,6 +17,7 @@ So the JavaScript on this page tries to find the repeating element and generates
 - Copy the contents of the left textarea and save it as e.g. friends.xml in the IFS.
 - Copy the contents of the right textarea and paste it in a "Run SQL Scripts" window of ACS. Be sure to have a COMMIT connection, as SQL function GET_XML_FILE requires this.
 - Change the filename "file.xml" to the friends.xml file.
+!(img/ACS_Run_SQL_Scripts_friends.png)
 - Run the XML statement, you should receive a result set!
 
 
