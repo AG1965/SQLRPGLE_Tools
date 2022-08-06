@@ -7,9 +7,18 @@ However, the coding is a cumbersome and errorprone activity, at least in my not 
 So the JavaScript on this page tries to find the repeating element and generates a SQL statement that can be almost immediately used in ACS to read the XML file.
 
 ## how to use
+- open the page https://ag1965.github.io/SQLRPGLE_Tools/XML_to_XMLTABLE.html in your browser
+or copy the repository to your machine with
+```
+git clone https://ag1965.github.io/SQLRPGLE_Tools
+```
+
+
 - Copy a XML document into the left textarea, leave the field and find the generated SQL in the right textarea.
 - Correct the length of the fields to the maximum length you expect (if you have a XML schema, you might be able to retrieve the info from there)
 - use it in an SQLRPGLE program (there is a tool that converts the SQL statement to a data structure definition, in which you can fetch the rows).
+
+Keep in mind that the generated SQL can only be as good as the XML file you provide.
 
 ## Sample
 - Enter "friends" in the left textarea, leave it (by e.g. pressing the TAB-key) and in the right textarea the SQL needed to read the XML should appear.
@@ -17,7 +26,7 @@ So the JavaScript on this page tries to find the repeating element and generates
 - Copy the contents of the left textarea and save it as e.g. friends.xml in the IFS.
 - Copy the contents of the right textarea and paste it in a "Run SQL Scripts" window of ACS. Be sure to have a COMMIT connection, as SQL function GET_XML_FILE requires this.
 - Change the filename "file.xml" to the friends.xml file.
-!(img/ACS_Run_SQL_Scripts_friends.png)
+![screenshot of ACS Run SQL Scripts with the changed SQL statements](img/ACS_Run_SQL_Scripts_friends.png)
 - Run the XML statement, you should receive a result set!
 
 
