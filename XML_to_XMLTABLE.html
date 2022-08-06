@@ -205,10 +205,17 @@
 		
 
 			  var t1 = document.getElementById("t1");
-			  var t = t1.value;
+			  var t = t1.value.trim();
 				
 				// -------------------------------------------------------
 				// special values for sample data
+				if ('friends' == t) {
+					t = '<?xml version="1.0" encoding="UTF-8"?>==NL==<Friends>==NL====TAB==<created>2022-08-06T18:59:00+02:00</created>==NL====TAB==<Friend>==NL====TAB====TAB==<Prename>Clark</Prename>==NL====TAB====TAB==<Surname>Kent</Surname>==NL====TAB====TAB==<Alias>Superman</Alias>==NL====TAB==</Friend>==NL====TAB==<Friend>==NL====TAB====TAB==<Prename>Bruce</Prename>==NL====TAB====TAB==<Surname>Wayne</Surname>==NL====TAB====TAB==<Alias>Batman</Alias>==NL====TAB====TAB==<Address>Wayne Manor</Address>==NL====TAB==</Friend>==NL==</Friends>';
+					t = t.replace(/==TAB==/g, "\t");
+					t = t.replace(/==NL==/g, "\n");
+					t1.value = t;
+				}
+
 				if ('pacs.003' == t) {
 					t = '<?xml version="1.0" encoding="UTF-8"?><Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.003.001.02"><FIToFICstmrDrctDbt><GrpHdr><MsgId>14000220704YJ000</MsgId><CreDtTm>2022-07-04T00:00:00.000+00:00</CreDtTm><NbOfTxs>4</NbOfTxs><TtlIntrBkSttlmAmt Ccy="EUR">36040.00</TtlIntrBkSttlmAmt><IntrBkSttlmDt>2022-07-05</IntrBkSttlmDt><SttlmInf><SttlmMtd>CLRG</SttlmMtd></SttlmInf><InstgAgt><FinInstnId><BIC>BAWAATW0XXX</BIC></FinInstnId></InstgAgt><InstdAgt><FinInstnId><BIC>WYAGATW0XXX</BIC></FinInstnId></InstdAgt></GrpHdr><DrctDbtTxInf><PmtId><InstrId>600002207012AEI-C98C851JP97F</InstrId><EndToEndId>NOTPROVIDED</EndToEndId><TxId>600002207012AEI-C98C851JP97F</TxId></PmtId><PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><LclInstrm><Cd>CORE</Cd></LclInstrm><SeqTp>RCUR</SeqTp></PmtTpInf><IntrBkSttlmAmt Ccy="EUR">20.00</IntrBkSttlmAmt><ChrgBr>SLEV</ChrgBr><ReqdColltnDt>2022-07-05</ReqdColltnDt><DrctDbtTx><MndtRltdInf><MndtId>G3242342ASFSA</MndtId><DtOfSgntr>2019-11-04</DtOfSgntr><AmdmntInd>false</AmdmntInd></MndtRltdInf><CdtrSchmeId><Id><PrvtId><Othr><Id>AT41ZZZ00000005309</Id><SchmeNm><Prtry>SEPA</Prtry></SchmeNm></Othr></PrvtId></Id></CdtrSchmeId></DrctDbtTx><Cdtr><Nm>Meine Firma</Nm></Cdtr><CdtrAcct><Id><IBAN>AT046000000007003770</IBAN></Id></CdtrAcct><CdtrAgt><FinInstnId><BIC>BAWAATW0XXX</BIC></FinInstnId></CdtrAgt><Dbtr><Nm>Daniel Comgtest 3</Nm></Dbtr><DbtrAcct><Id><IBAN>AT331982501003430013</IBAN></Id></DbtrAcct><DbtrAgt><FinInstnId><BIC>WYAGATW0XXX</BIC></FinInstnId></DbtrAgt><RmtInf><Ustrd>Netflix                            </Ustrd></RmtInf></DrctDbtTxInf><DrctDbtTxInf><PmtId><InstrId>600002207012AEI-C98C851JP97G</InstrId><EndToEndId>NOTPROVIDED</EndToEndId><TxId>600002207012AEI-C98C851JP97G</TxId></PmtId><PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><LclInstrm><Cd>CORE</Cd></LclInstrm><SeqTp>RCUR</SeqTp></PmtTpInf><IntrBkSttlmAmt Ccy="EUR">20.00</IntrBkSttlmAmt><ChrgBr>SLEV</ChrgBr><ReqdColltnDt>2022-07-05</ReqdColltnDt><DrctDbtTx><MndtRltdInf><MndtId>S345634544ETFEKOFS</MndtId><DtOfSgntr>2019-11-04</DtOfSgntr><AmdmntInd>false</AmdmntInd></MndtRltdInf><CdtrSchmeId><Id><PrvtId><Othr><Id>AT41ZZZ00000005309</Id><SchmeNm><Prtry>SEPA</Prtry></SchmeNm></Othr></PrvtId></Id></CdtrSchmeId></DrctDbtTx><Cdtr><Nm>Meine Firma</Nm></Cdtr><CdtrAcct><Id><IBAN>AT046000000007003770</IBAN></Id></CdtrAcct><CdtrAgt><FinInstnId><BIC>BAWAATW0XXX</BIC></FinInstnId></CdtrAgt><Dbtr><Nm>Daniel Comgtest 3</Nm></Dbtr><DbtrAcct><Id><IBAN>AT331982501003430013</IBAN></Id></DbtrAcct><DbtrAgt><FinInstnId><BIC>WYAGATW0XXX</BIC></FinInstnId></DbtrAgt><RmtInf><Ustrd>Waffen                             </Ustrd></RmtInf></DrctDbtTxInf><DrctDbtTxInf><PmtId><InstrId>600002207012AEI-C98C851JP97H</InstrId><EndToEndId>NOTPROVIDED</EndToEndId><TxId>600002207012AEI-C98C851JP97H</TxId></PmtId><PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><LclInstrm><Cd>CORE</Cd></LclInstrm><SeqTp>RCUR</SeqTp></PmtTpInf><IntrBkSttlmAmt Ccy="EUR">32000.00</IntrBkSttlmAmt><ChrgBr>SLEV</ChrgBr><ReqdColltnDt>2022-07-05</ReqdColltnDt><DrctDbtTx><MndtRltdInf><MndtId>SFASAFA343434ERW</MndtId><DtOfSgntr>2019-11-04</DtOfSgntr><AmdmntInd>false</AmdmntInd></MndtRltdInf><CdtrSchmeId><Id><PrvtId><Othr><Id>AT41ZZZ00000005309</Id><SchmeNm><Prtry>SEPA</Prtry></SchmeNm></Othr></PrvtId></Id></CdtrSchmeId></DrctDbtTx><Cdtr><Nm>Meine Firma</Nm></Cdtr><CdtrAcct><Id><IBAN>AT046000000007003770</IBAN></Id></CdtrAcct><CdtrAgt><FinInstnId><BIC>BAWAATW0XXX</BIC></FinInstnId></CdtrAgt><Dbtr><Nm>Daniel Comgtest 3</Nm></Dbtr><DbtrAcct><Id><IBAN>AT331982501003430013</IBAN></Id></DbtrAcct><DbtrAgt><FinInstnId><BIC>WYAGATW0XXX</BIC></FinInstnId></DbtrAgt><RmtInf><Ustrd>Schutzgeld                         </Ustrd></RmtInf></DrctDbtTxInf><DrctDbtTxInf><PmtId><InstrId>600002207012AEI-C98CA51JP6PF</InstrId><EndToEndId>NOTPROVIDED</EndToEndId><TxId>600002207012AEI-C98CA51JP6PF</TxId></PmtId><PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><LclInstrm><Cd>CORE</Cd></LclInstrm><SeqTp>RCUR</SeqTp></PmtTpInf><IntrBkSttlmAmt Ccy="EUR">4000.00</IntrBkSttlmAmt><ChrgBr>SLEV</ChrgBr><ReqdColltnDt>2022-07-05</ReqdColltnDt><DrctDbtTx><MndtRltdInf><MndtId>FG359304EJGJJG</MndtId><DtOfSgntr>2019-11-04</DtOfSgntr><AmdmntInd>false</AmdmntInd></MndtRltdInf><CdtrSchmeId><Id><PrvtId><Othr><Id>AT41ZZZ00000005309</Id><SchmeNm><Prtry>SEPA</Prtry></SchmeNm></Othr></PrvtId></Id></CdtrSchmeId></DrctDbtTx><Cdtr><Nm>Osama Bin Laden</Nm></Cdtr><CdtrAcct><Id><IBAN>AT046000000007003770</IBAN></Id></CdtrAcct><CdtrAgt><FinInstnId><BIC>BAWAATW0XXX</BIC></FinInstnId></CdtrAgt><Dbtr><Nm>Daniel Comgtest 3</Nm></Dbtr><DbtrAcct><Id><IBAN>AT331982501003430013</IBAN></Id></DbtrAcct><DbtrAgt><FinInstnId><BIC>WYAGATW0XXX</BIC></FinInstnId></DbtrAgt><RmtInf><Ustrd>Miete                              </Ustrd></RmtInf></DrctDbtTxInf></FIToFICstmrDrctDbt></Document>';
 					t1.value = t;
@@ -224,6 +231,12 @@
 					t1.value = t;
 				}
 				// -------------------------------------------------------
+
+				// as we have troubles with whitespace, try to remove it.
+				t = t.replace(/\t/g, '');
+				t = t.replace(/[\n\r]/g, '');
+				
+
 
 				parser = new DOMParser();
 				xmlDoc = parser.parseFromString(t,"text/xml");
@@ -330,7 +343,7 @@
 	</head>
 	<body>
 		<h3>Create SQL statement to read a XML file from the XML file</h3>
-		<p>Enter a XML-file in the left textarea and find the corresponding SQL statement to read it in the right textarea.</p>		
+		<p>Copy the contents of a XML-file in the left textarea (or enter just <tt>friends</tt> and press TAB to get started) and find the corresponding SQL statement to read it in the right textarea.</p>		
 
 		<table><tr><td valign="top">
 		<div style="padding-left:3px" class="ruler">&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;0<br>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</div>
@@ -345,10 +358,10 @@
 				</fieldset>
 				<fieldset><legend>Settings:</legend>
 					<table>
-						<tr><td><label for="FLDNAM_MINLEN">minimum field name length</label></td><td><input class="r" id="FLDNAM_MINLEN" name="FLDNAM_MINLEN" type="number" value="8" min="8" max="64" onchange="f()"></td></tr>
+						<tr><td><label for="FLDNAM_MINLEN">minimum field name length</label></td><td><input class="r" id="FLDNAM_MINLEN" name="FLDNAM_MINLEN" type="number" value="8" min="6" max="64" onchange="f()"></td></tr>
 						<tr><td><label for="FLDNAM_PADLEN">pad field name with blanks to total length</label></td><td><input class="r" id="FLDNAM_PADLEN" name="FLDNAM_PADLEN" type="number" value="20" min="0" max="64" onchange="f()"></td></tr>
 						<tr><td><label for="PADTYPLEN">pad field type and length with blanks to total length</label></td><td><input class="r" id="PADTYPLEN" name="PADTYPLEN" type="number" value="17" min="0" max="64" onchange="f()"></td></tr>
-					  <tr><td><label for="NLFORPATH">new line before PATH</td><td><input type="checkbox" name="NLFORPATH" id="NLFORPATH" checked="checked" onchange="f()" /></td></tr>
+					  <tr><td><label for="NLFORPATH">new line before PATH</td><td><input type="checkbox" name="NLFORPATH" id="NLFORPATH" onchange="f()" /></td></tr>
 					</table>
 				</fieldset>
 		</td></tr></table>

@@ -6,9 +6,22 @@ SQL provides a powerful function XMLTABLE to read XML documents as if they were 
 However, the coding is a cumbersome and errorprone activity, at least in my not so humble opinion.
 So the JavaScript on this page tries to find the repeating element and generates a SQL statement that can be almost immediately used in ACS to read the XML file.
 
-Copy a XML document into the left textarea, leave the field and find the generated SQL in the right textarea.
+## how to use
+- Copy a XML document into the left textarea, leave the field and find the generated SQL in the right textarea.
+- Correct the length of the fields to the maximum length you expect (if you have a XML schema, you might be able to retrieve the info from there)
+- use it in an SQLRPGLE program (there is a tool that converts the SQL statement to a data structure definition, in which you can fetch the rows).
+
+## Sample
+- Enter "friends" in the left textarea, leave it (by e.g. pressing the TAB-key) and in the right textarea the SQL needed to read the XML should appear.
+
+- Copy the contents of the left textarea and save it as e.g. friends.xml in the IFS.
+- Copy the contents of the right textarea and paste it in a "Run SQL Scripts" window of ACS. Be sure to have a COMMIT connection, as SQL function GET_XML_FILE requires this.
+- Change the filename "file.xml" to the friends.xml file.
+- Run the XML statement, you should receive a result set!
+
 
 ### known weaknesses
+- [ ] White space leads to errors. Please remove unnecessary blanks, tabulators and carriage return / line feed characters.
 - [ ] generated column names are not necessarily unique. E.g. /Creditor/Id/BIC and /Debitor/Id/BIC both lead to the same column name Id_BIC.
 - [ ] repeating elements at the end of the tree. E.g. 
 ```
