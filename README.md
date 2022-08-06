@@ -1,5 +1,5 @@
 # SQLRPGLE_Tools
-These HTML pages contain JavaScript and are intended to make life for the RPGLE programmer easier.
+This repository contains HTML pages with JavaScript and are intended to make life for the RPGLE programmer easier. You do not need to install anything, it works in your browser.
 
 ## XML_to_XMLTABLE.html
 SQL provides a powerful function XMLTABLE to read XML documents as if they were ordinary table rows (or database records).
