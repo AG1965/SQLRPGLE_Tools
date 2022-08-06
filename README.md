@@ -30,11 +30,11 @@ Keep in mind that the generated SQL can only be as good as the XML file you prov
 - Run the XML statement, you should receive a result set!
 ![the result set showing the 2 rows from the friends XML](img/Resultset_friends.png)
 ### more sophisticated samples
-the magic words "pain.001", "pacs.003" and "pacs.008" insert more sophisticated samples from the financial sector.
+the magic words "pain.001" and "pacs.003" insert more sophisticated samples from the financial sector.
 
 ### known weaknesses
 - [ ] for this proof of concept namespaces are mostly ignored; by using the "any"-approach it works with most of the files anyways
-- [ ] White space leads to errors. Please remove unnecessary blanks, tabulators and carriage return / line feed characters.
+- [ ] White space leads to errors. That's why it is removed; but please remove unnecessary blanks, tabulators and carriage return / line feed characters.
 - [ ] generated column names are not necessarily unique. E.g. /Creditor/Id/BIC and /Debitor/Id/BIC both lead to the same column name Id_BIC.
 - [ ] repeating elements at the end of the tree. E.g. 
 ```
@@ -50,3 +50,7 @@ It should be
  AdrLine2  VARCHAR(80)  PATH('PstlAdr/AdrLine[2]')
 ```
  
+
+## Disclaimer
+Although i'm a professional developer, this whole "modern" stuff is rather new to me; i started 1984 as a programmer. I'm still learning. 
+Use at your own risk.
